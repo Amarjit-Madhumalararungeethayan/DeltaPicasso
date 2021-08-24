@@ -22,8 +22,8 @@ import java.util.*
 class Editor : AppCompatActivity() {
 
     lateinit var binding : ActivityEditorBinding
-    lateinit var bitmapTemp : Bitmap
-    lateinit var bitmapFinal : Bitmap
+    var bitmapTemp : Bitmap? = null
+     var bitmapFinal : Bitmap? = null
 
     override fun onBackPressed() {
         val intent = Intent(this, Home::class.java)
@@ -50,8 +50,12 @@ class Editor : AppCompatActivity() {
 
         binding.gray.setOnClickListener(){
 
-            var h = bitmapTemp.height
-            var w = bitmapTemp.width
+        if(bitmapTemp != null){
+            if(bitmapFinal != null)
+                bitmapTemp = bitmapFinal
+
+            var h = bitmapTemp!!.height
+            var w = bitmapTemp!!.width
 
             var bmpGrayscale = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
             var c = Canvas(bmpGrayscale)
@@ -62,16 +66,22 @@ class Editor : AppCompatActivity() {
 
             var f = ColorMatrixColorFilter(cm)
             paint.setColorFilter(f)
-            c.drawBitmap(bitmapTemp,0F,0F,paint)
+            c.drawBitmap(bitmapTemp!!,0F,0F,paint)
 
             bitmapFinal = bmpGrayscale
             binding.pic.setImageBitmap(bmpGrayscale)
         }
+        }
 
         binding.text.setOnClickListener(){
 
-                var h = bitmapTemp.height
-                var w = bitmapTemp.width
+            if(bitmapTemp != null){
+
+                if(bitmapFinal != null)
+                    bitmapTemp = bitmapFinal
+
+                var h = bitmapTemp!!.height
+                var w = bitmapTemp!!.width
 
                 var bmpGrayscale = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
                 var c = Canvas(bmpGrayscale)
@@ -90,13 +100,14 @@ class Editor : AppCompatActivity() {
                 var f = ColorMatrixColorFilter(cm)
 
                 var word = binding.let.text
-                c.drawBitmap(bitmapTemp,0f,0f,paint)
+                c.drawBitmap(bitmapTemp!!,0f,0f,paint)
 
                 c.drawText(word.toString(), w.toFloat()/2 , h.toFloat()/2 + 500f, paint1)
 
 
                 bitmapFinal = bmpGrayscale
                 binding.pic.setImageBitmap(bmpGrayscale)
+            }
 
         }
 
@@ -126,6 +137,7 @@ class Editor : AppCompatActivity() {
 
         binding.share.setOnClickListener(){
 
+            if(bitmapTemp != null){
 
                 val intent = Intent(Intent.ACTION_SEND)
 
@@ -139,6 +151,7 @@ class Editor : AppCompatActivity() {
                 intent.type = "text/plain"
 
                 this.startActivity(Intent.createChooser(intent, "Send To"))
+            }
         }
 
     }
