@@ -36,31 +36,44 @@
         android:elevation="10dp"
         />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/head"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="180dp"
-        android:backgroundTint="#808080"
-        android:src="@drawable/ic_baseline_camera_alt_24"
-        android:elevation="20dp"
-        android:id="@+id/cam"
-        />
+    <!--
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="#808080"
+            android:src="@drawable/ic_baseline_camera_alt_24"
+            android:elevation="20dp"
+            android:id="@+id/cam"
+            />
+            !-->
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/cam"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#808080"
-        android:src="@drawable/ic_baseline_photo_album_24"
-        android:elevation="20dp"
-        android:id="@+id/gal"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to Edit"
+            app:layout_constraintTop_toBottomOf="@id/gal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/moon"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="170dp"
+            android:backgroundTint="#808080"
+            android:src="@drawable/ic_baseline_photo_album_24"
+            android:elevation="20dp"
+            android:id="@+id/gal"
+            />
 
     <TextView
         android:layout_width="wrap_content"

@@ -45,9 +45,11 @@ class Editor : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, 0)
+
         }
 
         binding.gray.setOnClickListener(){
+
             var h = bitmapTemp.height
             var w = bitmapTemp.width
 
@@ -66,6 +68,39 @@ class Editor : AppCompatActivity() {
             binding.pic.setImageBitmap(bmpGrayscale)
         }
 
+        binding.text.setOnClickListener(){
+
+                var h = bitmapTemp.height
+                var w = bitmapTemp.width
+
+                var bmpGrayscale = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+                var c = Canvas(bmpGrayscale)
+
+                var paint = Paint()
+                var cm = ColorMatrix()
+                cm.setSaturation(0F)
+
+                var paint1 = Paint()
+                paint1.color = Color.RED
+                paint1.style = Paint.Style.FILL_AND_STROKE
+                paint1.textSize = 80f
+                paint1.typeface = Typeface.create("sans-serif-condensed",Typeface.BOLD)
+                paint1.textAlign = Paint.Align.CENTER
+
+                var f = ColorMatrixColorFilter(cm)
+
+                var word = binding.let.text
+                c.drawBitmap(bitmapTemp,0f,0f,paint)
+
+                c.drawText(word.toString(), w.toFloat()/2 , h.toFloat()/2 + 500f, paint1)
+
+
+                bitmapFinal = bmpGrayscale
+                binding.pic.setImageBitmap(bmpGrayscale)
+
+        }
+
+        /**
         binding.save.setOnClickListener(){
 
             val root = Environment.getExternalStorageDirectory().toString()
@@ -87,20 +122,23 @@ class Editor : AppCompatActivity() {
             }
 
         }
+        **/
 
         binding.share.setOnClickListener(){
-            val intent = Intent(Intent.ACTION_SEND)
-
-            intent.putExtra(
-                Intent.EXTRA_STREAM, getTheImageUri(this, bitmapFinal!!))
-            intent.type = "img/*"
 
 
-            intent.putExtra(
-                Intent.EXTRA_TEXT, ("Picasso"))
-            intent.type = "text/plain"
+                val intent = Intent(Intent.ACTION_SEND)
 
-            this.startActivity(Intent.createChooser(intent, "Send To"))
+                intent.putExtra(
+                    Intent.EXTRA_STREAM, getTheImageUri(this, bitmapFinal!!))
+                intent.type = "img/*"
+
+
+                intent.putExtra(
+                    Intent.EXTRA_TEXT, ("Picasso"))
+                intent.type = "text/plain"
+
+                this.startActivity(Intent.createChooser(intent, "Send To"))
         }
 
     }

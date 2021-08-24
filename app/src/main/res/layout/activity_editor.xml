@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:background="@color/black"
         />
 
@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/logo"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:id="@+id/pic"
         />
 
@@ -81,8 +81,19 @@
         android:id="@+id/gray"
         />
 
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Text ..."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gray"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/let"
+        />
+
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="150dp"
         android:layout_height="45dp"
         android:gravity="center"
         android:text="Add Text"
@@ -91,12 +102,12 @@
         app:layout_constraintTop_toBottomOf="@id/gray"
         android:textColor="@color/white"
         android:fontFamily="@font/moon"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"
         android:elevation="15dp"
         />
-
+<!--
     <TextView
         android:layout_width="135dp"
         android:layout_height="45dp"
@@ -113,6 +124,8 @@
         android:elevation="15dp"
         />
 
+        !-->
+
     <TextView
         android:layout_width="135dp"
         android:layout_height="45dp"
@@ -125,7 +138,7 @@
         android:fontFamily="@font/moon"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="60dp"
+        app:layout_constraintStart_toStartOf="parent"
         android:elevation="15dp"
         />
 
