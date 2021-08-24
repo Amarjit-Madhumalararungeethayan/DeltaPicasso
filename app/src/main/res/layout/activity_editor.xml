@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:background="@color/black"
         />
 
@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/logo"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/pic"
         />
 
@@ -98,18 +98,34 @@
         />
 
     <TextView
-        android:layout_width="125dp"
+        android:layout_width="135dp"
         android:layout_height="45dp"
         android:gravity="center"
-        android:text="Save"
+        android:text="Save to Gallery"
         android:id="@+id/save"
         android:background="@drawable/rounded"
         app:layout_constraintTop_toBottomOf="@id/text"
         android:textColor="@color/white"
         android:fontFamily="@font/moon"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="60dp"
+        android:elevation="15dp"
+        />
+
+    <TextView
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="Share"
+        android:id="@+id/share"
+        android:background="@drawable/rounded"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        android:textColor="@color/white"
+        android:fontFamily="@font/moon"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"
+        android:layout_marginRight="60dp"
         android:elevation="15dp"
         />
 
